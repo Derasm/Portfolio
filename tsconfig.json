@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "importHelpers": true,
+        "experimentalDecorators": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "types": ["vite/client"],
+        "baseUrl": ".",
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "declaration": false,
+        "target": "ES6",
+        "module": "ESNext",
+        "moduleResolution": "Node"
+    },
+    "include": ["src/**/*.ts", "src/**/*.vue", "src/main.js"]
+}
