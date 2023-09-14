@@ -1,0 +1,2 @@
+import{d as l,c as s,a as t,F as r,r as c,o as e,t as i}from"./index-d4596fb0.js";const d=t("span",{class:"tw-flex justify-center tw-text-xl tw-mx-6"},"Tools used to build this section:",-1),_={class:"tw-flex tw-justify-center tw-flex-wrap"},p={class:""},x=l({__name:"DevOps",props:{},setup(u){const a=["Grafana","Gitlab Actions","Terraform","AWS"];return(f,m)=>(e(),s("main",null,[d,t("div",_,[t("div",p,[t("li",null,[(e(),s(r,null,c(a,(o,n)=>t("ul",{key:n,class:"tw-list-disc"},i(o),1)),64))])])])]))}});export{x as default};
+//# sourceMappingURL=DevOps-0d349634.js.map
