@@ -14,5 +14,5 @@ export default defineConfig({
         sourcemap: true,
         outDir: "./public",
     },
-    base: "./portfolio",
+    base: "/portfolio",
 });
