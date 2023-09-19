@@ -3,7 +3,7 @@
         <div class="tw-flex tw-justify-center tw-mx-auto tw-flex-col tw-h-1/2">
             <!-- text content -->
             <p class="tw-font-bold tw-text-xl tw-text-violet-800">
-                Software, DevOps eternal positivity.
+                Software, DevOps and eternal positivity.
             </p>
             <p class="tw-italic tw-text-lg">
                 I build software that is easy to maintain, also in 6 months time
