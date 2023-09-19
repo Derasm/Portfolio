@@ -1,7 +1,7 @@
 <template>
     <!-- top-bar with navigation  -->
     <q-toolbar class="tw-flex tw-justify-center tw-bg-[#231f28]">
-        <q-btn class="tw-mx-1" to="/" outline color="deep-orange-10">
+        <q-btn class="tw-mx-1" to="/portfolio" outline color="deep-orange-10">
             Main page
         </q-btn>
         <q-btn class="" to="/devops" outline color="deep-orange-10">
