@@ -10,9 +10,10 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
+    assetsInclude: ["**/*.svg"],
     build: {
         sourcemap: true,
         outDir: "./dist",
     },
-    base: "./Portfolio",
+    base: "/Portfolio",
 });

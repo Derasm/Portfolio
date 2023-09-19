@@ -19,7 +19,15 @@ const props = defineProps({
     },
 });
 onMounted(async () => {
-    const response = await fetch("portfolio/src/assets/" + props.svgPath);
+    let response = null;
+    if (import.meta.env.DEV) {
+        response = await fetch("Portfolio/src/assets/" + props.svgPath);
+    }
+    // when they are included in prod, they use base url, not assets url
+    if (import.meta.env.PROD) {
+        response = await fetch("Portfolio/" + props.svgPath);
+    }
+
     const data = await response.text();
     svg.value.innerHTML = data;
 });
