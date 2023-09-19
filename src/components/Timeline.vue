@@ -1,5 +1,5 @@
 <template>
-    <div class="tw-min-h-screen tw-w-full tw-text-black tw-p-12 tw-px-24">
+    <div class="tw-min-h-screen tw-w-full tw-text-black tw-p-6 tw-px-24">
         <div class="tw-flex tw-justify-center tw-pb-6">
             <q-btn @click="isDevOps = false" color="deep-orange-10" outline
                 >Software Engineering</q-btn
