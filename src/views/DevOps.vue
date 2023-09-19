@@ -26,7 +26,7 @@
 import MonitoringTools from "@/components/MonitoringTools.vue";
 import { ref } from "vue";
 //comment what this component is about
-const props = defineProps({});
+// const props = defineProps({});
 const toolsUsed = ["Grafana", "Gitlab Actions", "Terraform", "AWS"];
 </script>
 <style scoped></style>

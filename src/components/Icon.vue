@@ -25,7 +25,7 @@ onMounted(async () => {
     }
     // when they are included in prod, they use base url, not assets url
     if (import.meta.env.PROD) {
-        response = await fetch("Portfolio/" + props.svgPath);
+        response = await fetch(props.svgPath);
     }
 
     const data = await response.text();
