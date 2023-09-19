@@ -19,7 +19,7 @@ const props = defineProps({
     },
 });
 onMounted(async () => {
-    const response = await fetch("src/assets/" + props.svgPath);
+    const response = await fetch("portfolio/src/assets/" + props.svgPath);
     const data = await response.text();
     svg.value.innerHTML = data;
 });
