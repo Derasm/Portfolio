@@ -1,8 +1,9 @@
 <template>
-    <main class="tw-bg-[#231f28] tw-min-h-screen">
+    <main class="tw-min-h-screen">
         <MainPageHeader />
         <Timeline />
         <DevOps />
+        <div class="tw-w-full tw-h-48"></div>
     </main>
 </template>
 <script lang="ts" setup>
