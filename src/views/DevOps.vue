@@ -1,11 +1,21 @@
 <template>
-    <div class="tw-w-full">
+    <div class="tw-w-full -tw-mt-24">
         <!-- Grid layout with 3 columns, centered horizontally on the screen. -->
-        <div class="tw-w-3/4 tw-mx-auto">
+        <div class="tw-w-3/4 tw-mx-auto tw-bg-white">
             <div
                 class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3"
             >
                 <section class="section">
+                    <!-- icon -->
+                    <div
+                        class="tw-rounded-full tw-bg-green-300 tw-w-16 tw-h-16 tw-flex tw-justify-center tw-items-center"
+                    >
+                        <q-icon
+                            name="code"
+                            style="color: #141c3a"
+                            size="3rem"
+                        ></q-icon>
+                    </div>
                     <span
                         class="tw-text-xl tw-bold tw-font-bold tw-text-indigo-600"
                         >Software Development</span
@@ -41,6 +51,16 @@
                 </section>
                 <!--Center portion  -->
                 <section class="section">
+                    <div
+                        class="tw-rounded-full tw-bg-green-300 tw-w-16 tw-h-16 tw-flex tw-justify-center tw-items-center"
+                    >
+                        <q-icon
+                            name="terminal"
+                            style="color: #141c3a"
+                            size="3rem"
+                        ></q-icon>
+                    </div>
+
                     <span
                         class="tw-text-xl tw-bold tw-font-bold tw-text-indigo-600"
                         >DevOps</span
@@ -75,6 +95,15 @@
                     </div>
                 </section>
                 <section class="section">
+                    <div
+                        class="tw-rounded-full tw-bg-green-300 tw-w-16 tw-h-16 tw-flex tw-justify-center tw-items-center"
+                    >
+                        <q-icon
+                            name="interests"
+                            style="color: #141c3a"
+                            size="3rem"
+                        ></q-icon>
+                    </div>
                     <span
                         class="tw-text-xl tw-font-bold tw-bold tw-text-indigo-600"
                         >Personal</span
