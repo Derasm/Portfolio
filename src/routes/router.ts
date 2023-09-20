@@ -7,11 +7,6 @@ const routes = [
         name: "Main Page",
         component: MainPageVue,
     },
-    {
-        path: "/devops",
-        name: "DevOps",
-        component: import("@/views/DevOps.vue"),
-    },
     // {
     //     path: "/Hexgrid",
     //     name: "Hexgrid",

@@ -1,11 +1,9 @@
 <template>
     <div
-        class="tw-w-full tw-bg-violet-800 tw-flex tw-justify-center tw-text-center tw-text-white tw-align-middle tw-pb-64 tw-pt-4"
+        class="tw-w-full tw-bg-violet-800 tw-flex tw-justify-center tw-text-center tw-text-white tw-align-middle tw-pb-64 tw-pt-8"
     >
-        <div class="tw-w-1/2 tw-mx-auto">
-            <span class="tw-text-2xl tw-font-bold"
-                >Hi, I'm Dennis. Welcome.</span
-            >
+        <div class="tw-w-1/2 tw-mx-auto tw-pt-24">
+            <span class="tw-text-2xl tw-font-bold">Hi, I'm Dennis.</span>
             <p class="tw-text-lg">
                 <br />
                 I got started writing software back in 2017 as a backend, then

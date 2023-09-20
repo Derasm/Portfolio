@@ -124,9 +124,10 @@
                                 >What I do in my spare time</span
                             >
                             <ul>
+                                <li>Adore red pandas</li>
                                 <li>Muay Thai</li>
                                 <li>Pen and Paper</li>
-                                <li>Snack.</li>
+                                <li>Cooking.</li>
                                 <li>Disc-golf</li>
                             </ul>
                         </div>
@@ -137,6 +138,7 @@
     </div>
 </template>
 <script lang="ts" setup>
+import Icon from "@/components/Icon.vue";
 import { ref } from "vue";
 //comment what this component is about
 // const props = defineProps({});

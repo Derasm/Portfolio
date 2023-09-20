@@ -9,7 +9,16 @@
                 I build software that is easy to maintain, also in 6 months time
                 when we've all forgotten how it works
             </p>
+            <div class="tw-flex tw-justify-center tw-align-middle">
+                <Icon
+                    svg-path="Red_Panda.svg"
+                    class="tw-w-24 tw-h-24"
+                    width="96"
+                    height="90"
+                />
+            </div>
         </div>
+
         <img
             src="../assets/HeroDevices.svg"
             alt=""
@@ -18,6 +27,7 @@
     </div>
 </template>
 <script lang="ts" setup>
+import Icon from "./Icon.vue";
 import { ref } from "vue";
 //comment what this component is about
 //const props = defineProps({})
