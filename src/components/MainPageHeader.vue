@@ -1,7 +1,7 @@
 <template>
     <div class="tw-flex tw-justify-center tw-min-h-full tw-text-white">
         <figure
-            class="tw-flex tw-bg-slate-100 tw-rounded-xl tw-p-6 dark:tw-bg-slate-800 tw-border-2 tw-border-orange-800"
+            class="tw-flex tw-bg-indigo-800 tw-rounded-xl tw-p-6 tw-border-2 tw-border-orange-800"
         >
             <div>
                 <!-- image and links -->
