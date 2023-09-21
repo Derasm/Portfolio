@@ -12,10 +12,11 @@
             </p>
             <p class="tw-text-lg">
                 I've built products for the maritime sector, robotics for
-                hospitals and mentored teams across domains.
+                hospitals, pipelines for complex products and mentored teams
+                across domains.
             </p>
             <p class="tw-text-lg">
-                I do both Freelance and fulltime employment, and love working
+                I do both Freelance and Fulltime employment, and love working
                 remotely. Technology empowers so many to do so much, and I love
                 being part of the journey.
             </p>

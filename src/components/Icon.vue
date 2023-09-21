@@ -45,18 +45,20 @@ onMounted(async () => {
 
     const data = await response.text();
     svg.value.innerHTML = data;
-    if (props.innerClass) {
-        const innerSvg = svg.value.querySelector("svg");
-        innerSvg.classList.add(props.innerClass);
-    }
-    if (props.width) {
-        const innerSvg = svg.value.querySelector("svg");
-        innerSvg.setAttribute("width", props.width);
-    }
+    if (svg.value !== null) {
+        if (props.innerClass) {
+            const innerSvg = svg.value.querySelector("svg");
+            innerSvg.classList.add(props.innerClass);
+        }
+        if (props.width) {
+            const innerSvg = svg.value.querySelector("svg");
+            innerSvg.setAttribute("width", props.width);
+        }
 
-    if (props.height) {
-        const innerSvg = svg.value.querySelector("svg");
-        innerSvg.setAttribute("height", props.height);
+        if (props.height) {
+            const innerSvg = svg.value.querySelector("svg");
+            innerSvg.setAttribute("height", props.height);
+        }
     }
 });
 </script>

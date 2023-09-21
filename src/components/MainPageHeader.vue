@@ -1,72 +1,39 @@
 <template>
-    <div class="tw-flex tw-justify-center tw-min-h-full tw-text-white">
-        <figure
-            class="tw-flex tw-bg-indigo-800 tw-rounded-xl tw-p-6 tw-border-2 tw-border-orange-800"
+    <div class="tw-w-full tw-h-screen section-header tw-text-center">
+        <div
+            class="tw-flex tw-justify-center tw-mx-auto tw-flex-col lg:tw-h-1/2 tw-h-2/5"
+            id="introduction"
         >
-            <div>
-                <!-- image and links -->
-                <img
-                    class="tw-rounded-full tw-mx-1 sm:tw-w-auto sm:tw-h-auto tw-max-h-[10rem] tw-max-w-[10rem]]"
-                    src="@/assets/ProfilePic.jpg"
-                    alt=""
-                />
-                <span class="tw-flex tw-ml-4">
-                    <a
-                        href="mailto:RasmussenDennisB@gmail.com"
-                        target="_blank"
-                        class="tw-mx-1 tw-mt-2"
-                    >
-                        <q-icon
-                            name="email"
-                            size="2.2rem"
-                            color="white"
-                            class="hover:tw-fill-black"
-                        ></q-icon>
-                    </a>
-                    <a
-                        href="https://gitlab.com/Deras"
-                        target="_blank"
-                        class="tw-mx-1"
-                    >
-                        <Icon :svg-path="'git.svg'" class="tw-w-12 tw-h-12" />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/dennis-b-rasmussen/"
-                        target="_blank"
-                        class="tw-mx-1 tw-mt-2"
-                    >
-                        <Icon
-                            :svg-path="'linkedin.svg'"
-                            class="tw-w-8 tw-h-8 tw-fill-white hover:tw-fill-slate-500"
-                        />
-                    </a>
-                </span>
-            </div>
-            <div class="tw-flex">
-                <div class="tw-pl-4 tw-space-y-4">
-                    <p class="tw-text-lg tw-font-medium">
-                        Experienced Software Developer with DevOps and
-                        <br />
-                        managerial experience.
-                    </p>
-                    <ul class="tw-list-disc tw-ml-6">
-                        <li class="">CRM / POS / PWA / SPA</li>
-                        <li class="">
-                            VueJS, C#, .NET, Typescript, Python, Powershell.
-                        </li>
-                        <li class="">
-                            AWS, Azure, GCP, Docker, Kubernetes, Terraform.
-                        </li>
-                    </ul>
+            <p class="tw-font-bold tw-text-xl tw-text-violet-800">
+                Software, DevOps and positivity.
+            </p>
+            <p class="tw-italic tw-text-lg">
+                I build software that is easy to maintain, also in 6 months time
+                when we've all forgotten how it works
+            </p>
+            <div class="tw-flex tw-justify-center tw-align-middle lg:tw-pt-16">
+                <div class="tw-rounded-full tw-w-28 tw-h-28 tw-bg-violet-700">
+                    <Icon
+                        svg-path="Red_Panda.svg"
+                        class="tw-w-24 tw-h-24 tw-pt-3"
+                        width="96"
+                        height="90"
+                    />
                 </div>
             </div>
-        </figure>
+        </div>
+
+        <img
+            src="../assets/HeroDevices.svg"
+            alt=""
+            class="tw-w-full tw-align-bottom"
+        />
     </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
-import LinkedIn from "@/assets/LinkedIn.svg";
 import Icon from "./Icon.vue";
+import { ref } from "vue";
 //comment what this component is about
+//const props = defineProps({})
 </script>
 <style scoped></style>
