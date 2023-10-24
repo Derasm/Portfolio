@@ -3,9 +3,8 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-//comment what this component is about
 /**
- * Basic icon functionality, as Quasar is being a right cunt and Tailwind too. Fuck em.
+ * Basic icon functionality, as Vite / Quasar do not play nice together on account of static asset handling.
  */
 const svg = ref(null);
 const props = defineProps({
@@ -45,6 +44,7 @@ onMounted(async () => {
 
     const data = await response.text();
     svg.value.innerHTML = data;
+    // basic if for manipulation of the html element created, as the SVG file otherwise wouldn't work on a button.
     if (svg.value !== null) {
         if (props.innerClass) {
             const innerSvg = svg.value.querySelector("svg");

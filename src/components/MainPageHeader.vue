@@ -36,8 +36,5 @@
 </template>
 <script lang="ts" setup>
 import Icon from "./Icon.vue";
-import { ref } from "vue";
-//comment what this component is about
-//const props = defineProps({})
 </script>
 <style scoped></style>

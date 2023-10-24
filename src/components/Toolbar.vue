@@ -8,9 +8,5 @@
         </q-btn>
     </q-toolbar>
 </template>
-<script lang="ts" setup>
-import { ref } from "vue";
-//comment what this component is about
-//const props = defineProps({})
-</script>
+<script lang="ts" setup></script>
 <style scoped></style>

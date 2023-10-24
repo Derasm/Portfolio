@@ -50,9 +50,6 @@ interface TimelineData {
     DevOps?: string;
     DevOpsTakeaway?: string;
 }
-/**
- * Timeline component showing visually jobexperience and what i learned plus tools used.
- */
 //if it should be programming or devops
 let isDevOps = ref(false);
 // const props = defineProps({});
