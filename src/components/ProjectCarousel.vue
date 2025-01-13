@@ -7,7 +7,7 @@
                     <p class="tw-text-white tw-text-center tw-text-lg tw-p-2 ">{{leftImage.text}}</p>
                 </div>
             </div>
-            <div class="center tw-relative" id="center">
+            <div class="slide center tw-relative" id="center">
                 <img :src="centerImage.src" />
                 <div class="tw-absolute tw-bottom-0 tw tw-bg-gray-700 tw-h-1/3 tw-w-full tw-opacity-50 tw-flex tw-justify-center tw-items-center">
                     <p class="tw-text-white tw-text-center tw-text-lg tw-p-2">{{centerImage.text}}</p>
@@ -23,18 +23,21 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 
 type Image = {
     src: string;
     text: string;
     index: number;
 }
-const images = ref([
-    { src: 'https://placehold.co/600x400', text: 'Slide 1', index: 0 },
-    { src: 'https://placehold.co/600x400', text: 'Slide 2', index: 1 },
-    { src: 'https://placehold.co/600x400', text: 'Slide 3', index: 2 },
-])
+const projectSet: {src: string, text: string}[] = [
+    { src: 'https://placehold.co/600x400', text: '0' },
+    { src: 'https://placehold.co/600x400', text: '1' },
+    { src: 'https://placehold.co/600x400', text: '2' },
+    { src: 'https://placehold.co/600x400', text: '3' },
+    { src: 'https://placehold.co/600x400', text: '4' },
+    { src: 'https://placehold.co/600x400', text: '5' },
+];
 
 //comment what this component is about
 /**Carousel of projects, with an image and a path to the github project download page, or something similar.
@@ -42,34 +45,52 @@ const images = ref([
  */
 //const props = defineProps({})
 
-let leftImage = computed(() => {
-    //If currentIndex is 0, we wrap around to the last image
-    return currentIndex - 1 < 0 ?  images.value[currentIndex-1] : images.value[0];
-});
-let centerImage = computed(()=> {
-    return images.value[currentIndex];
-});
-let rightImage = computed(() => {
-    //If currentIndex is the last image, we wrap around to the first image
-    return currentIndex + 1 > images.value.length -1 ? images.value[0] : images.value[currentIndex + 1];
+let currentIndex = ref(1); // Start from the center slide
+let leftImage = ref(projectSet[0]);
+let centerImage = ref(projectSet[1]); 
+let rightImage = ref(projectSet[2]); 
+
+watch(currentIndex, (newIndex) => {
+    // if ( currentIndex.value < 0){
+    //  leftImage.value = projectSet[projectSet.length-1]   
+    // }
+    // else {
+    //     leftImage.value = projectSet[currentIndex.value - 1];
+    //     if (currentIndex.value-1 < 0) {
+    //         leftImage.value = projectSet[projectSet.length - 1];
+            
+    //     }
+    // }
+    // Shortened version of the above. 
+    // This keeps it within bounds (add 3, subtract 3 negates each other, leaving just the index. Anything left over must be correct location)
+    leftImage.value = projectSet[(currentIndex.value - 1 + projectSet.length) % projectSet.length];
+    centerImage.value = projectSet[currentIndex.value];
+    rightImage.value = currentIndex.value + 1 > projectSet.length -1 ? projectSet[0] : projectSet[currentIndex.value + 1];
 });
 
-let currentIndex = 1; // Start from the center slide
 
-function SlideCarousel(direction) {
-    console.log("Sliding carousel", direction);
-    
-    if (direction === 'right') {
-        //If we are at the end, we wrap around
-        if (currentIndex == images.value.length-1) {
-            currentIndex = 0;
-        }
-        currentIndex = (currentIndex + 1);
-    } else {
-        if (currentIndex == 0) {
-            currentIndex = images.value.length - 1; 
-        }
-        currentIndex = currentIndex - 1;
+
+
+function SlideCarousel(direction: string) {
+    switch (direction) {
+        case "right":
+            // We are increasing the index by 1 here unless we are at the end. 
+            if ( currentIndex.value === projectSet.length - 1) {
+                currentIndex.value = 0;
+            } else {
+                currentIndex.value += 1;
+            }
+            break;
+        case "left":
+            // We are decreasing the index by 1 here unless we are at the beginning. 
+            if (currentIndex.value === 0) {
+                currentIndex.value = projectSet.length - 1;
+            } else {
+                currentIndex.value -= 1;
+            }
+            break;
+        default:
+            break;
     }
     // carousel.style.transform = `translateX(${-600 * currentIndex}px)`;
 }
@@ -94,17 +115,52 @@ function DragEnd(e:TouchEvent){
 
 .carousel {
     display: flex;
-    width: 1800px; /* 3 slides * 600px */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
     transition: transform 0.5s ease-in-out;
 }
 
 .slide {
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
     width: 600px;
     height: 400px;
-    border: 3px solid black;
-    margin-top: 50px;
     box-sizing: border-box;
-    zoom: 80%;
+    border: 3px solid black;
+    z-index: 1;
+    opacity: 0.8;
+    transform: scale(0.8); /* Smaller for side images */
+}
+
+/* Center slide gets special treatment */
+#center {
+    transform: scale(1); /* Larger for center image */
+    z-index: 2;
+    opacity: 1;
+}
+
+/* Left and right positioning for overlap effect */
+#left {
+    transform: translateX(-80%) scale(0.8);
+}
+
+#right {
+    transform: translateX(80%) scale(0.8);
+}
+
+/* Small screens: Show only center */
+@media (max-width: 767px) {
+    #left, #right {
+        display: none;
+    }
+
+    #center {
+        transform: scale(1);
+        z-index: 2;
+    }
 }
 
 </style>
