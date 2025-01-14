@@ -153,6 +153,7 @@ function DragEnd(e:TouchEvent){
 
 /* Small screens: Show only center */
 @media (max-width: 767px) {
+
     #left, #right {
         display: none;
     }
