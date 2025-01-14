@@ -2,7 +2,7 @@
     <div class="tw-flex tw-justify-center tw-items-center tw-mx-auto lg:tw-w-full tw-p-4">
         <div class="carousel" @touchstart="DragStart" @touchend="DragEnd">
             <div class="slide tw-relative" id="left" @click="SlideCarousel('left')" >
-                <img :src="rightImage.src"  />
+                <img :src="leftImage.src"  />
                 <div class="tw-absolute tw-bottom-0 tw tw-bg-gray-900 tw-h-1/3 tw-w-full tw-opacity-50 tw-flex tw-justify-center tw-items-center">
                     <p class="tw-text-white tw-text-center tw-text-lg tw-p-2 ">{{leftImage.text}}</p>
                 </div>
@@ -31,12 +31,12 @@ type Image = {
     index: number;
 }
 const projectSet: {src: string, text: string}[] = [
-    { src: 'https://placehold.co/600x400', text: '0' },
-    { src: 'https://placehold.co/600x400', text: '1' },
-    { src: 'https://placehold.co/600x400', text: '2' },
-    { src: 'https://placehold.co/600x400', text: '3' },
-    { src: 'https://placehold.co/600x400', text: '4' },
-    { src: 'https://placehold.co/600x400', text: '5' },
+    { src: '/src/assets/Red1.webp', text: '0' },
+    { src: '/src/assets/Red2.webp', text: '1' },
+    { src: '/src/assets/Red3.webp', text: '2' },
+    { src: '/src/assets/Red4.webp', text: '3' },
+    { src: '/src/assets/Red5.webp', text: '4' },
+    { src: '/src/assets/ProfilePicture.jpg', text: '5' },
 ];
 
 //comment what this component is about
@@ -126,6 +126,7 @@ function DragEnd(e:TouchEvent){
     position: absolute;
     transition: transform 0.5s ease-in-out;
     transform-origin: center;
+    scroll-snap-type: x mandatory;
     width: 600px;
     height: 400px;
     box-sizing: border-box;
@@ -133,6 +134,7 @@ function DragEnd(e:TouchEvent){
     z-index: 1;
     opacity: 0.8;
     transform: scale(0.8); /* Smaller for side images */
+    object-fit: contain;
 }
 
 /* Center slide gets special treatment */
@@ -153,6 +155,7 @@ function DragEnd(e:TouchEvent){
 
 /* Small screens: Show only center */
 @media (max-width: 767px) {
+
 
     #left, #right {
         display: none;
