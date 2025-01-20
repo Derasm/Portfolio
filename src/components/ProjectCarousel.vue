@@ -3,21 +3,25 @@
         <!-- Carousel container -->
         <div class="carousel">
             <!-- Dynamically render slides with Vue's v-for -->
-            <div>
-                <q-carousel
+            <q-carousel
                 animated
+                v-model="slide"
                 arrows
                 navigation
                 infinite
-                v-model="slide"
-
+                swipeable
+                class="tw-w-full tw-h-full"
+                control-color="purple"
                 >
-                <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
-                <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
-                <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
-                <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
-                </q-carousel>
-            </div>
+                    <q-carousel-slide v-for="(project, index,) in projects"
+                        :key="index+1"
+                        :name="index+1"
+                        :img-src="project.src"
+                        draggable="false"
+                        />
+
+            </q-carousel>
+
         </div>
 
     </div>
@@ -35,13 +39,21 @@ const projectSet = [
     { src: '/src/assets/Red5.webp', text: '4' },
     { src: '/src/assets/ProfilePicture.jpg', text: '5' }
 ];
-const slide = ref(0);
+const slide = ref(1);
 const projects = ref(projectSet);
 
 </script>
 
 <style scoped>
 /* Carousel container styling */
+.carousel {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Center image styling */
