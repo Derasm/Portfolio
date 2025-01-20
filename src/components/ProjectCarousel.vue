@@ -139,10 +139,10 @@ function afterLeave(el: Element) {
 
 /* Hide slides with a delay after the transition completes */
 .fadeout {
-    transform: scale(0.5);
     opacity: 0;
-    transition: transform 0.1s ease-in-out, opacity 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     pointer-events: none;
+    z-index: 0;
 }
 
 
